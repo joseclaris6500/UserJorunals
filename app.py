@@ -23,12 +23,11 @@ def view_entry(entries):
 print(welcome_mess)
 
 while (user_input := input(menu)) != "3":
+
     if user_input == "1":
         prompt_new_entry()
     elif user_input == "2":
-        view_entry(get_entry())        
+        view_entry(get_entry())
     else:
         print("Invalid option, please tyr again")
-
-
     user_input = input(menu)
