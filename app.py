@@ -1,4 +1,4 @@
-from database import add_entry, get_entry
+from database import create_table, add_entry, get_entry
 
 
 menu = """Please select one of the following options:
@@ -21,6 +21,7 @@ def view_entry(entries):
         print(f"{entry['date']}\n{entry['content']}\n\n")
 
 print(welcome_mess)
+create_table()
 
 while (user_input := input(menu)) != "3":
 
