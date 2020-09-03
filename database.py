@@ -1,5 +1,7 @@
 import sqlite3
 connection = sqlite3.connect("data.db")
+#When getting rows, use different method to print rows
+connection.row_factory = sqlite3.Row
 
 def create_table():
     with connection:
@@ -13,7 +15,7 @@ def add_entry(entry_content, entry_date):
         )
     
 def get_entry():
-    return entries
-
+    cursor = connection.execute("SELECT * FROM entries;")
+    return cursor #returns all of the variable
 
 
